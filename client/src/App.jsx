@@ -7,19 +7,23 @@ import 'leaflet/dist/leaflet.css';
 import './App.css';
 import Map from "./Components/MapPage"
 import Registration from './Registration';
+import NavigationBar from './Component/NavigationBar';
+import MapComponent from './Component/MapComponent';
 function App() {
 
   return (
     <>
       {/* <Booking/> */}
+      <NavigationBar />
       <Router>
       <Routes>
         <Route path="/" element={<Registration />} />
         <Route path="/booking" element={<Booking />} />
       </Routes>
     </Router>
-      <Slots/>
+      {/* <Slots/> */}
       <Button>Text Button</Button>
+      <MapComponent/>
       <Map/>
     </>
   )

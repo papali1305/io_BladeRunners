@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import markerIconImage from '../assets/images.png'; // Import the marker icon image
 import data from '../innovateOdisha.lots.json'; // Sample data import
 import Slot from './Slots'; // Assuming Slots is the component for individual slots
+import customIcon from '../Component/CustomMarker';
 
 function Header({ title }) {
   return (
@@ -55,8 +56,14 @@ const MapPage = () => {
             <Marker
               key={lot._id.$oid}
               position={[lot.location.coordinates[0], lot.location.coordinates[1]]}
-              icon={markerIcon}
+              icon={customIcon}
             >
+              <Tooltip>
+              <b>{lot.lotName}</b><br />
+                Capacity: {lot.capacity}<br />
+                Available Spaces: {lot.availableSpaces}<br />
+                Hourly Rate: ₹{lot.hourlyRate}
+              </Tooltip>
               <Popup>
                 <b>{lot.lotName}</b><br />
                 Capacity: {lot.capacity}<br />
