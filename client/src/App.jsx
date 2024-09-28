@@ -7,8 +7,8 @@ import 'leaflet/dist/leaflet.css';
 import './App.css';
 import Map from "./Components/MapPage"
 import Registration from './Registration';
-import NavigationBar from './Component/NavigationBar';
-import MapComponent from './Component/MapComponent';
+import NavigationBar from './Components/NavigationBar';
+// import MapComponent from './Component/MapComponent';
 function App() {
 
   return (

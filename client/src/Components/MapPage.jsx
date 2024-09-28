@@ -5,7 +5,7 @@ import L from 'leaflet';
 import markerIconImage from '../assets/images.png'; // Import the marker icon image
 import data from '../innovateOdisha.lots.json'; // Sample data import
 import Slot from './Slots'; // Assuming Slots is the component for individual slots
-import customIcon from '../Component/CustomMarker';
+import customIcon from './CustomMarker';
 
 function Header({ title }) {
   return (
