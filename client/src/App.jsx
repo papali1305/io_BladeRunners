@@ -23,7 +23,7 @@ function App() {
     </Router>
       {/* <Slots/> */}
       <Button>Text Button</Button>
-      <MapComponent/>
+      {/* <MapComponent/> */}
       <Map/>
     </>
   )
