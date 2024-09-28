@@ -1,68 +1,75 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+ /* Map Section */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+#map-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+.MapContainer {
+  height: 100%;
+  width: 100%;
+}
+/* NavBar */
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0f7fa; /* Light blue background */
+}
+
+.navbar {
+  height:50px;
+ 
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1a1734; /* Dark blue background */
+
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logo img {
+  height: 50px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a.active, .nav-links li a:hover {
+  background-color: #4f518c; /* Light blue hover effect */
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 }
