@@ -1,3 +1,4 @@
+import Contact from "../models/contactModel.js";
 import User from "../models/user.js";
 
 export const register = async (req, res) => {
@@ -36,6 +37,25 @@ export const register = async (req, res) => {
 			message: "Account created successfully",
 			success: true,
 			user,
+		});
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+export const contactUs = async (req, res) => {
+	try {
+		const { email, message } = req.body;
+		const contact = await Contact.create({ email, message });
+		if (!contact) {
+			return res.status(400).json({
+				message: "Failed to send message",
+				success: false,
+			});
+		}
+		res.status(201).json({
+			message: "Message sent successfully",
+			success: true,
 		});
 	} catch (error) {
 		console.log(error);
