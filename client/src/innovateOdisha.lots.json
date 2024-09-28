@@ -1,0 +1,260 @@
+[{
+    "_id": {
+      "$oid": "66f7b6ae7ba4904b61f0e973"
+    },
+    "lotName": "lingaraj_lot",
+    "lotAddress": {
+      "$oid": "66f7b6ae7ba4904b61f0e971"
+    },
+    "capacity": 50,
+    "availableSpaces": 50,
+    "hourlyRate": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2384327,
+        85.751375
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T07:56:30.225Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T07:56:30.225Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7b813a91521c56b29c986"
+    },
+    "lotName": "nandankanan_lot",
+    "lotAddress": {
+      "$oid": "66f7b813a91521c56b29c984"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 2,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.3957652,
+        85.7847646
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:02:27.477Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:02:27.477Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7b8efa91521c56b29c98a"
+    },
+    "lotName": "udayagiri_lot",
+    "lotAddress": {
+      "$oid": "66f7b8efa91521c56b29c988"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2627379,
+        85.7853516
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:06:07.670Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:06:07.670Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7b982a91521c56b29c98e"
+    },
+    "lotName": "dhauli_lot",
+    "lotAddress": {
+      "$oid": "66f7b982a91521c56b29c98c"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.1881541,
+        85.8034991
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:08:34.740Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:08:34.740Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7b9fda91521c56b29c992"
+    },
+    "lotName": "mukteswar_lot",
+    "lotAddress": {
+      "$oid": "66f7b9fda91521c56b29c990"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2427007,
+        85.7991644
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:10:37.358Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:10:37.358Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7babfa91521c56b29c996"
+    },
+    "lotName": "museum_tribal_lot",
+    "lotAddress": {
+      "$oid": "66f7babfa91521c56b29c994"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2829973,
+        85.7655427
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:13:51.210Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:13:51.210Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7bb7aa91521c56b29c99a"
+    },
+    "lotName": "iskcon_lot",
+    "lotAddress": {
+      "$oid": "66f7bb7aa91521c56b29c998"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 2,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2891441,
+        85.7719421
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:16:58.367Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:16:58.367Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7bc5da91521c56b29c99f"
+    },
+    "lotName": "esplanade_lot",
+    "lotAddress": {
+      "$oid": "66f7bc5da91521c56b29c99d"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 2,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2914592,
+        85.8147274
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:20:45.079Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:20:45.079Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7c192a91521c56b29c9a3"
+    },
+    "lotName": "utkala_kanika_lot",
+    "lotAddress": {
+      "$oid": "66f7c192a91521c56b29c9a1"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 2,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.2565507,
+        85.8367858
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:42:58.987Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:42:58.987Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66f7c39ca91521c56b29c9a7"
+    },
+    "lotName": "dn_regalia_lot",
+    "lotAddress": {
+      "$oid": "66f7c39ca91521c56b29c9a5"
+    },
+    "capacity": 100,
+    "availableSpaces": 100,
+    "hourlyRate": 2,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        20.241011,
+        85.7557399
+      ]
+    },
+    "createdAt": {
+      "$date": "2024-09-28T08:51:40.603Z"
+    },
+    "updatedAt": {
+      "$date": "2024-09-28T08:51:40.603Z"
+    },
+    "__v": 0
+  }]
