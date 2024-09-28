@@ -16,6 +16,13 @@ const userSchema = new Schema(
 			required: true,
 			unique: true,
 		},
+		verifyCode: {
+			type: String,
+		},
+		isVerified: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	{ timestamps: true }
 );
