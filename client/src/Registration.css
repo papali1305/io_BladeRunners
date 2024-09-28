@@ -1,0 +1,142 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Modal Styles */
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-header {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Form Styles */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  border-color: #337ab7;
+  box-shadow: 0 0 10px rgba(51, 122, 183, 0.5);
+}
+
+.button {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #337ab7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #23527c;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Success Animation Styles */
+
+.success-animation {
+  text-align: center;
+  padding: 20px;
+}
+
+.success-animation h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #337ab7;
+}
+
+.car-animation {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.car {
+  width: 50px;
+  height: 50px;
+  background-color: #337ab7;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: car-move 3s ease-in-out;
+}
+
+.parking-lot {
+  width: 100px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes car-move {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
