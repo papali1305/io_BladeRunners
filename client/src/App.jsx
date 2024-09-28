@@ -1,5 +1,5 @@
 import Booking from "./Booking"
-import Slots from "./componenets/slots"
+import Slots from "./components/Slots"
 import Button from 'react-bootstrap/Button'
 
 import 'leaflet/dist/leaflet.css';
