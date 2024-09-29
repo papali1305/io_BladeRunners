@@ -34,9 +34,9 @@ const Registration = () => {
       setLoading(false);
       setRegistered(true); // Show success animation
 
-      // Delay before redirecting to the booking page
+      // Delay before redirecting to the map page
       setTimeout(() => {
-        navigate('/booking');
+        navigate('/map'); // Redirect to map page after 2 seconds
       }, 2000); // 2 seconds for success animation
     }, 3000); // 3 seconds of loading time
   };
