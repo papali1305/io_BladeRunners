@@ -1,22 +1,22 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Booking.css';
 
-const Booking = () => {
-  const [show, setShow] = useState(true);
+const Booking = ({ show, setShow, handleBooking }) => {
   const [formData, setFormData] = useState({
     email: '',
     carNumber: '',
     carColour: '',
     date: '',
-    startTime: '',
-    endTime: ''
+    startTime: ''
   });
   
-  const [bookingConfirmed, setBookingConfirmed] = useState(false); // State for showing the animation
-  const [showMessage, setShowMessage] = useState(false); // State for showing the message
+  const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
@@ -25,51 +25,74 @@ const Booking = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleOtpChange = (e) => {
+    setOtp(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Booking Details:', formData);
     
-    // Simulate a booking process
-    setBookingConfirmed(true); // Show animation popup
+    // Input validation
+    if (!formData.carNumber.match(/^[A-Z]{2}\s?\d{1,2}\s?[A-Z]{1,2}\s?\d{1,4}$/)) {
+      alert('Invalid car number format. Please use the format: XX 12 XX 1234');
+      return;
+    }
 
-    // Show message after a delay (e.g., 4 seconds)
+    setShowOtp(true);
+  };
+
+  const handleOtpSubmit = () => {
+    if (otp.length === 6) {
+      setShowOtp(false);
+      setShowPaymentModal(true);
+    } else {
+      alert('Invalid OTP. Please enter a 6-digit OTP.');
+    }
+  };
+
+  const handlePayment = (paymentMethod) => {
+    console.log(`Payment method: ${paymentMethod}`);
+    setShowPaymentModal(false);
+    setBookingConfirmed(true);
     setTimeout(() => {
       setShowMessage(true);
-    }, 4000); // 4 seconds for the animation to complete
-
-    // Hide animation and navigate after a longer delay (e.g., 6 seconds)
+    }, 4000);
     setTimeout(() => {
-      setBookingConfirmed(false); // Hide the booking animation
-      navigate('/'); // Navigate to the homepage or other page
-    }, 6000); // 6 seconds for the full animation including message
+      setBookingConfirmed(false);
+      setShow(false);
+      navigate('/slots');
+      handleBooking(formData.startTime, formData.startTime);
+    }, 6000);
   };
-  return (
 
-  <>
-  {/* Main Booking Modal */}
-  <Modal show={show && !bookingConfirmed} onHide={handleClose} centered>
-    <Modal.Header closeButton>
-      <Modal.Title>Book your slot</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            placeholder="Enter email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formCarNumber">
+  return (
+    <>
+      {/* Main Booking Modal */}
+      <Modal show={show && !bookingConfirmed && !showPaymentModal} onHide={handleClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Book your slot</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formCarNumber">
               <Form.Label>Car Number</Form.Label>
               <Form.Control
                 type="text"
                 name="carNumber"
-                placeholder="Enter car number"
+                placeholder="Enter car number (e.g. XX 12 XX 1234)"
                 value={formData.carNumber}
                 onChange={handleChange}
                 required
@@ -110,17 +133,6 @@ const Booking = () => {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formEndTime">
-              <Form.Label>End Time</Form.Label>
-              <Form.Control
-                type="time"
-                name="endTime"
-                value={formData.endTime}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-
             <Button variant="primary" type="submit" className="w-100">
               Book
             </Button>
@@ -128,7 +140,69 @@ const Booking = () => {
         </Modal.Body>
       </Modal>
 
-      {/* Car Parking Animation Popup */}
+      {/* OTP Modal */}
+      {showOtp && (
+        <Modal show={showOtp} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Enter OTP</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+              <Form.Group className="mb-3" controlId="formOtp">
+                <Form.Label>OTP</Form.Label>
+                <Form.Control
+ type="number"
+                  name="otp"
+                  placeholder="Enter 6-digit OTP"
+                  value={otp}
+                  onChange={handleOtpChange}
+                  required
+                />
+              </Form.Group>
+
+              <Button variant="primary" type="button" onClick={handleOtpSubmit} className="w-100">
+                OK
+              </Button>
+            </Form>
+          </Modal.Body>
+        </Modal>
+      )}
+
+      {/* Payment Modal */}
+      {showPaymentModal && (
+        <Modal show={showPaymentModal} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Payment Options</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h5>Select a payment method:</h5>
+            <ul>
+              <li>
+                <Button variant="primary" onClick={() => handlePayment('PhonePe')}>
+                  PhonePe
+                </Button>
+              </li>
+              <li>
+                <Button variant="primary" onClick={() => handlePayment('GooglePay')}>
+                  Google Pay
+                </Button>
+              </li>
+              <li>
+                <Button variant="primary" onClick={() => handlePayment('Paytm')}>
+                  Paytm
+                </Button>
+              </li>
+              <li>
+                <Button variant="primary" onClick={() => handlePayment('Cash')}>
+                  Cash
+                </Button>
+              </li>
+            </ul>
+          </Modal.Body>
+        </Modal>
+      )}
+
+      {/* Booking Animation Modal */}
       {bookingConfirmed && (
         <Modal show={bookingConfirmed} centered>
           <Modal.Body>
@@ -138,11 +212,11 @@ const Booking = () => {
                 <div className="parking-lot">
                   <div className="parking-spot"></div>
                   <div className="car"></div>
+                </div>
               </div>
               {showMessage && (
                 <h4>Your time starts now!</h4>
               )}
-            </div>
             </div>
           </Modal.Body>
         </Modal>
@@ -150,4 +224,5 @@ const Booking = () => {
     </>
   );
 };
+
 export default Booking;
