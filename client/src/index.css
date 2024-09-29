@@ -35,6 +35,7 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  width: auto;
   align-items: center;
   padding: 10px 20px;
   background-color: #1a1734; /* Dark blue background */
